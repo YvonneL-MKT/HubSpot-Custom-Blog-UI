@@ -1,1 +1,1356 @@
+/* ==========================================================================
+   Asteroom Blog Header & Footer CSS
+   Final clean version for asterooom-elevate-blog-detail.html
+   File to replace: asterooom-blog-header-footer.css
+   ========================================================================== */
 
+/* --- 1. Base --- */
+body.hs-blog-body,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: #1a2744;
+  background: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* --- 2. Main wrapper for blog content --- */
+/* ✅ 這裡改：blog post 主內容往下推，避免和 fixed header 重疊 */
+.asteroom-blog-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 118px 24px 64px; /* 原本是 48px 24px 64px */
+}
+
+.asteroom-blog-main,
+.asteroom-blog-main p,
+.asteroom-blog-main li,
+.asteroom-blog-main blockquote,
+.asteroom-blog-main figcaption {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #334155;
+}
+
+.asteroom-blog-main h1,
+.asteroom-blog-main h2,
+.asteroom-blog-main h3,
+.asteroom-blog-main h4,
+.asteroom-blog-main h5,
+.asteroom-blog-main h6 {
+  color: #1a2744;
+  line-height: 1.25;
+}
+
+.asteroom-blog-main table th,
+.asteroom-blog-main table thead th {
+  color: #ffffff;
+}
+
+.asteroom-blog-main a {
+  color: #293665;
+}
+
+.asteroom-blog-main a:hover {
+  color: #6b83e9;
+}
+
+/* ✅ 新增：tablet / mobile 的 blog post 間距 */
+@media (max-width: 1024px) {
+  .asteroom-blog-main {
+    padding: 150px 20px 56px;
+  }
+}
+
+@media (max-width: 767px) {
+  .asteroom-blog-main {
+    padding: 130px 16px 48px;
+  }
+}
+
+/* --- 3. Header --- */
+.asteroom-blog-header {
+  background: #000F41;
+  border-bottom: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.asteroom-blog-header__inner {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 28px;
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.asteroom-blog-header__logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.asteroom-blog-header__logo {
+  display: block;
+  width: 126px;
+  height: auto;
+  max-width: none;
+}
+
+.asteroom-blog-header__nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.asteroom-blog-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+/* --- 4. Buttons --- */
+.asteroom-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  min-height: 42px;
+  padding: 0 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* Log In */
+.asteroom-btn--secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+}
+
+.asteroom-btn--secondary:hover {
+  background: #00DDE3;
+  color: #ffffff;
+  border-color: #00DDE3;
+}
+
+/* Get Started */
+.asteroom-btn--primary {
+  background: #ffffff;
+  color: #000F41;
+  border: 1px solid #ffffff;
+}
+
+.asteroom-btn--primary:hover {
+  background: #00DDE3;
+  color: #000F41;
+  border-color: #00DDE3;
+}
+
+/* --- 5. Desktop HubSpot menu styling --- */
+.asteroom-blog-header .hs-menu-wrapper,
+.asteroom-blog-header .hs-menu-wrapper ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.asteroom-blog-header .hs-menu-wrapper > ul {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.asteroom-blog-header .hs-menu-wrapper > ul > li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.asteroom-blog-header .hs-menu-wrapper > ul > li > a,
+.asteroom-blog-header .hs-menu-wrapper > ul > li > span {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* desktop top nav hover / active */
+.asteroom-blog-header .hs-menu-wrapper > ul > li > a:hover,
+.asteroom-blog-header .hs-menu-wrapper > ul > li > span:hover,
+.asteroom-blog-header .hs-menu-wrapper .active-branch > a,
+.asteroom-blog-header .hs-menu-wrapper .active > a {
+  color: #ffffff;
+  background: #1F2D5E;
+}
+
+.asteroom-blog-header .hs-item-has-children {
+  position: relative;
+}
+
+.asteroom-blog-header .hs-item-has-children > a::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.45em;
+  vertical-align: 0.12em;
+  border-top: 0.3em solid #7EDBFF;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+
+/* desktop dropdown */
+.asteroom-blog-header .hs-menu-children-wrapper {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 230px;
+  padding: 14px 10px;
+  background: #000F41;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  z-index: 1100;
+}
+
+.asteroom-blog-header .hs-item-has-children:hover > .hs-menu-children-wrapper,
+.asteroom-blog-header .hs-item-has-children:focus-within > .hs-menu-children-wrapper {
+  display: block;
+  animation: asteroomNavFadeIn 0.2s ease-out;
+}
+
+.asteroom-blog-header .hs-menu-children-wrapper li {
+  width: 100%;
+  margin: 4px 0;
+}
+
+.asteroom-blog-header .hs-menu-children-wrapper a {
+  display: block;
+  width: auto;
+  margin: 0;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #ffffff;
+  border-radius: 8px;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.asteroom-blog-header .hs-menu-children-wrapper a:hover,
+.asteroom-blog-header .hs-menu-children-wrapper .active > a,
+.asteroom-blog-header .hs-menu-children-wrapper .active-branch > a {
+  color: #ffffff;
+  background: #1F2D5E;
+}
+
+@keyframes asteroomNavFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 6. Footer --- */
+.asteroom-blog-footer {
+  background: #0f1933;
+  color: #ffffff;
+  margin-top: 0;
+  padding: 92px 32px 28px;
+}
+
+.asteroom-blog-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.asteroom-blog-footer__top {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.asteroom-blog-footer__social {
+  min-width: 0;
+}
+
+.asteroom-blog-footer__menus {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 56px;
+}
+
+.asteroom-blog-footer__col {
+  min-width: 0;
+}
+
+.asteroom-blog-footer__title {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.asteroom-blog-footer__social-links,
+.asteroom-blog-footer__menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.asteroom-blog-footer__social-links a,
+.asteroom-blog-footer__menu-links a,
+.asteroom-blog-footer__col a {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.asteroom-blog-footer__social-links a:hover,
+.asteroom-blog-footer__menu-links a:hover,
+.asteroom-blog-footer__col a:hover {
+  color: #00DDE3;
+}
+
+.asteroom-blog-footer__bottom {
+  margin-top: 52px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.asteroom-blog-footer__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.asteroom-blog-footer__legal a {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.asteroom-blog-footer__legal a:hover {
+  color: #00DDE3;
+}
+
+.asteroom-blog-footer__support {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.asteroom-blog-footer__support span:first-child {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+.asteroom-blog-footer__support span:last-child {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.asteroom-blog-footer__copyright {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* --- 7. Footer responsive --- */
+@media (max-width: 1024px) {
+  .asteroom-blog-footer {
+    padding: 56px 24px 24px;
+  }
+
+  .asteroom-blog-footer__top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .asteroom-blog-footer__menus {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 28px;
+  }
+
+  .asteroom-blog-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .asteroom-blog-footer__support {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 575px) {
+  .asteroom-blog-footer {
+    padding: 48px 20px 22px;
+  }
+
+  .asteroom-blog-footer__menus {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .asteroom-blog-footer__social-links a,
+  .asteroom-blog-footer__menu-links a,
+  .asteroom-blog-footer__col a {
+    font-size: 15px;
+  }
+}
+
+/* --- 8. Tablet + mobile hamburger menu --- */
+.asteroom-blog-header__toggle {
+  display: none !important;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 auto;
+}
+
+.asteroom-blog-header__toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* desktop only */
+@media (min-width: 1025px) {
+  .asteroom-blog-header__toggle {
+    display: none !important;
+  }
+
+  .asteroom-blog-header__nav {
+    display: flex !important;
+    width: auto !important;
+    flex: 1 1 auto !important;
+    padding-top: 0 !important;
+    justify-content: center !important;
+  }
+
+  .asteroom-blog-header__actions {
+    display: flex !important;
+  }
+}
+
+/* tablet + mobile */
+@media (max-width: 1024px) {
+  .asteroom-blog-header__inner {
+    min-height: 72px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .asteroom-blog-header__logo-link {
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  .asteroom-blog-header__toggle {
+    display: inline-flex !important;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .asteroom-blog-header__actions {
+    display: none !important;
+  }
+
+  .asteroom-blog-header__nav {
+    display: none !important;
+    order: 3;
+    width: 100% !important;
+    flex: 0 0 100%;
+    padding-top: 12px;
+    justify-content: flex-start !important;
+  }
+
+  .asteroom-blog-header.is-menu-open .asteroom-blog-header__nav {
+    display: block !important;
+  }
+
+  .asteroom-blog-header .hs-menu-wrapper,
+  .asteroom-blog-header .hs-menu-wrapper > ul {
+    width: 100%;
+  }
+
+  .asteroom-blog-header .hs-menu-wrapper > ul {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 0 8px !important;
+    background: #000F41;
+  }
+
+  .asteroom-blog-header .hs-menu-wrapper > ul > li {
+    width: 100%;
+    margin: 0 0 6px !important;
+    padding: 0 !important;
+    border-top: 0;
+  }
+
+  .asteroom-blog-header .hs-menu-wrapper > ul > li > a,
+  .asteroom-blog-header .hs-menu-wrapper > ul > li > span {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 16px !important;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #ffffff !important;
+    border-radius: 10px;
+    background: transparent;
+    box-sizing: border-box;
+  }
+
+  .asteroom-blog-header .hs-menu-wrapper > ul > li > a:hover,
+  .asteroom-blog-header .hs-menu-wrapper > ul > li > span:hover,
+  .asteroom-blog-header .hs-menu-wrapper > ul > li.active > a,
+  .asteroom-blog-header .hs-menu-wrapper > ul > li.active-branch > a {
+    background: #1F2D5E;
+    color: #ffffff !important;
+  }
+
+  .asteroom-blog-header .hs-item-has-children > a::after {
+    margin-left: auto;
+    border-top-color: #7EDBFF;
+  }
+
+.asteroom-blog-header .hs-menu-children-wrapper {
+  position: static !important;
+  display: none !important;
+  min-width: auto !important;
+  width: 100% !important;
+  margin: 8px 0 0 !important;
+  padding: 8px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  background: #0A174B !important;
+}
+
+/* only open the clicked menu */
+  .asteroom-blog-header .hs-item-has-children.is-submenu-open > .hs-menu-children-wrapper {
+    display: block !important;
+  }
+
+  /* top-level item style */
+  .asteroom-blog-header .hs-menu-wrapper > ul > li > a,
+  .asteroom-blog-header .hs-menu-wrapper > ul > li > span {
+    position: relative;
+  }
+
+  /* active top-level item */
+  .asteroom-blog-header .hs-menu-wrapper > ul > li.is-submenu-open > a,
+  .asteroom-blog-header .hs-menu-wrapper > ul > li.is-submenu-open > span {
+    background: #1F2D5E;
+    color: #ffffff !important;
+  }
+
+  /* arrow animation */
+  .asteroom-blog-header .hs-item-has-children > a::after {
+    transition: transform 0.2s ease, border-top-color 0.2s ease;
+  }
+
+  .asteroom-blog-header .hs-item-has-children.is-submenu-open > a::after {
+    transform: rotate(180deg);
+  }
+
+  .asteroom-blog-header .hs-menu-children-wrapper li {
+    width: 100%;
+    margin: 4px 0;
+  }
+
+  .asteroom-blog-header .hs-menu-children-wrapper a {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 12px 14px !important;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff !important;
+    background: transparent !important;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  .asteroom-blog-header .hs-menu-children-wrapper a:hover,
+  .asteroom-blog-header .hs-menu-children-wrapper .active > a,
+  .asteroom-blog-header .hs-menu-children-wrapper .active-branch > a {
+    color: #ffffff !important;
+    background: #1F2D5E !important;
+  }
+
+  .asteroom-blog-header.is-menu-open .asteroom-blog-header__toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .asteroom-blog-header.is-menu-open .asteroom-blog-header__toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .asteroom-blog-header.is-menu-open .asteroom-blog-header__toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* ==========================================================================
+   9. Blog listing page only
+   Safe editor-compatible styles
+   ========================================================================== */
+
+.asteroom-blog-listing-main {
+  max-width: none;
+  padding: 118px 0 80px;
+}
+
+.asteroom-blog-listing-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 24px 0;
+  box-sizing: border-box;
+}
+
+/* listing grid / cards */
+.asteroom-blog-listing-content .blog-index,
+.asteroom-blog-listing-content .content-wrapper {
+  align-items: stretch;
+}
+
+.asteroom-blog-listing-content article,
+.asteroom-blog-listing-content .blog-post,
+.asteroom-blog-listing-content .blog-index__post {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* image */
+.asteroom-blog-listing-content article img,
+.asteroom-blog-listing-content .blog-post img,
+.asteroom-blog-listing-content .blog-index__post img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* basic spacing inside each card */
+.asteroom-blog-listing-content article > * ,
+.asteroom-blog-listing-content .blog-post > *,
+.asteroom-blog-listing-content .blog-index__post > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.asteroom-blog-listing-content h1,
+.asteroom-blog-listing-content h2,
+.asteroom-blog-listing-content h3,
+.asteroom-blog-listing-content h4,
+.asteroom-blog-listing-content .blog-post__title,
+.asteroom-blog-listing-content .blog-index__post-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.asteroom-blog-listing-content .blog-post__meta,
+.asteroom-blog-listing-content .blog-index__post-meta,
+.asteroom-blog-listing-content .blog-author,
+.asteroom-blog-listing-content .blog-date {
+  margin-bottom: 16px;
+}
+
+.asteroom-blog-listing-content p,
+.asteroom-blog-listing-content .blog-post__summary,
+.asteroom-blog-listing-content .blog-index__post-summary,
+.asteroom-blog-listing-content .post-summary,
+.asteroom-blog-listing-content .blog-post__excerpt {
+  margin-bottom: 24px;
+}
+
+/* push the CTA button to the bottom */
+.asteroom-blog-listing-content article a.hs-button,
+.asteroom-blog-listing-content article .hs-button,
+.asteroom-blog-listing-content article a.read-more,
+.asteroom-blog-listing-content .blog-post a.hs-button,
+.asteroom-blog-listing-content .blog-post .hs-button,
+.asteroom-blog-listing-content .blog-post a.read-more,
+.asteroom-blog-listing-content .blog-index__post a.hs-button,
+.asteroom-blog-listing-content .blog-index__post .hs-button,
+.asteroom-blog-listing-content .blog-index__post a.read-more {
+  margin-top: auto !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  align-self: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  color: #000000 !important;
+  display: inline-flex !important;
+}
+
+/* force button text to black */
+.asteroom-blog-listing-content .hs-button,
+.asteroom-blog-listing-content .hs-button:link,
+.asteroom-blog-listing-content .hs-button:visited,
+.asteroom-blog-listing-content a.hs-button,
+.asteroom-blog-listing-content a.read-more {
+  color: #000000 !important;
+}
+
+/* keep left aligned text even if theme centers buttons */
+.asteroom-blog-listing-content .hs-button span,
+.asteroom-blog-listing-content a.read-more span {
+  color: #000000 !important;
+  text-align: left !important;
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .asteroom-blog-listing-main {
+    padding: 96px 0 64px;
+  }
+
+  .asteroom-blog-listing-content {
+    padding: 0 20px 0;
+  }
+
+  .asteroom-blog-listing-content article img,
+  .asteroom-blog-listing-content .blog-post img,
+  .asteroom-blog-listing-content .blog-index__post img {
+    height: 220px;
+  }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .asteroom-blog-listing-main {
+    padding: 150px 0 48px;
+  }
+
+  .asteroom-blog-listing-content {
+    padding: 0 16px 0;
+  }
+
+  .asteroom-blog-listing-content article img,
+  .asteroom-blog-listing-content .blog-post img,
+  .asteroom-blog-listing-content .blog-index__post img {
+    height: 200px;
+  }
+}
+
+/* ==========================================================================
+   10. Blog subscribe section
+   Shared styles for blog listing and blog post
+   ========================================================================== */
+
+.asteroom-blog-subscribe-section {
+  padding: 40px 24px 40px;
+}
+
+.asteroom-blog-post-subscribe-section {
+  padding: 20px 24px 40px;
+}
+
+.asteroom-blog-subscribe-section__divider,
+.asteroom-blog-post-subscribe-section__divider {
+  max-width: 800px;
+  margin: 10px auto 32px;
+  border-top: 1px solid #d9e2ec;
+}
+
+.asteroom-blog-subscribe-section__inner,
+.asteroom-blog-post-subscribe-section__inner {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f5f8fc;
+  border: 1px solid #d9e2ec;
+  border-radius: 20px;
+  padding: 20px 20px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.asteroom-blog-subscribe-section__content,
+.asteroom-blog-post-subscribe-section__content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.asteroom-blog-subscribe-section__title,
+.asteroom-blog-post-subscribe-section__title {
+  display: block;
+  margin: 0 0 16px 0;
+  padding: 0;
+  text-indent: 0;
+  color: #1a2744;
+  font-size: 25px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.asteroom-blog-subscribe-section__description,
+.asteroom-blog-post-subscribe-section__description {
+  margin: 0;
+  color: #4f6572;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.asteroom-blog-subscribe-section__form-wrap,
+.asteroom-blog-post-subscribe-section__form-wrap {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   HubSpot form base
+   -------------------------------------------------------------------------- */
+
+.asteroom-blog-subscribe-section__inner form,
+.asteroom-blog-subscribe-section__inner .hs-form,
+.asteroom-blog-post-subscribe-section__inner form,
+.asteroom-blog-post-subscribe-section__inner .hs-form {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.asteroom-blog-subscribe-section .hs-form,
+.asteroom-blog-post-subscribe-section .hs-form {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.asteroom-blog-subscribe-section .hs-form-field,
+.asteroom-blog-post-subscribe-section .hs-form-field {
+  margin-bottom: 12px;
+}
+
+.asteroom-blog-subscribe-section .hs-form label,
+.asteroom-blog-post-subscribe-section .hs-form label {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: #1a2744;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.asteroom-blog-subscribe-section .hs-input,
+.asteroom-blog-post-subscribe-section .hs-input,
+.asteroom-blog-subscribe-section input[type="text"],
+.asteroom-blog-post-subscribe-section input[type="text"],
+.asteroom-blog-subscribe-section input[type="email"],
+.asteroom-blog-post-subscribe-section input[type="email"] {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #c8d2dc;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1a2744;
+  font-size: 16px;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.asteroom-blog-subscribe-section .hs-input::placeholder,
+.asteroom-blog-post-subscribe-section .hs-input::placeholder,
+.asteroom-blog-subscribe-section input::placeholder,
+.asteroom-blog-post-subscribe-section input::placeholder {
+  color: #7c8b9a;
+}
+
+/* Desktop: Email + First name */
+.asteroom-blog-subscribe-section .hs-form .hs_email,
+.asteroom-blog-subscribe-section .hs-form .hs_firstname,
+.asteroom-blog-post-subscribe-section .hs-form .hs_email,
+.asteroom-blog-post-subscribe-section .hs-form .hs_firstname {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(50% - 12px);
+  max-width: none;
+  margin-right: 24px;
+  box-sizing: border-box;
+}
+
+.asteroom-blog-subscribe-section .hs-form .hs_firstname,
+.asteroom-blog-post-subscribe-section .hs-form .hs_firstname {
+  margin-right: 0;
+}
+
+.asteroom-blog-subscribe-section .hs-form .hs_email .input,
+.asteroom-blog-subscribe-section .hs-form .hs_firstname .input,
+.asteroom-blog-post-subscribe-section .hs-form .hs_email .input,
+.asteroom-blog-post-subscribe-section .hs-form .hs_firstname .input {
+  width: 100%;
+}
+
+.asteroom-blog-subscribe-section .hs-form .hs_email input,
+.asteroom-blog-subscribe-section .hs-form .hs_firstname input,
+.asteroom-blog-post-subscribe-section .hs-form .hs_email input,
+.asteroom-blog-post-subscribe-section .hs-form .hs_firstname input {
+  width: 100% !important;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+/* Hide consent paragraph copy, keep checkbox rows */
+.asteroom-blog-subscribe-section .legal-consent-container .hs-richtext,
+.asteroom-blog-post-subscribe-section .legal-consent-container .hs-richtext,
+.asteroom-blog-subscribe-section .hs-form-field > .input > .hs-richtext,
+.asteroom-blog-post-subscribe-section .hs-form-field > .input > .hs-richtext {
+  display: none;
+}
+
+/* Remove bullets */
+.asteroom-blog-subscribe-section .legal-consent-container ul,
+.asteroom-blog-post-subscribe-section .legal-consent-container ul,
+.asteroom-blog-subscribe-section .legal-consent-container li,
+.asteroom-blog-post-subscribe-section .legal-consent-container li,
+.asteroom-blog-subscribe-section .inputs-list,
+.asteroom-blog-post-subscribe-section .inputs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.asteroom-blog-subscribe-section .legal-consent-container li::marker,
+.asteroom-blog-post-subscribe-section .legal-consent-container li::marker,
+.asteroom-blog-subscribe-section .inputs-list li::marker,
+.asteroom-blog-post-subscribe-section .inputs-list li::marker {
+  content: "";
+}
+
+.asteroom-blog-subscribe-section .legal-consent-container li,
+.asteroom-blog-post-subscribe-section .legal-consent-container li,
+.asteroom-blog-subscribe-section .inputs-list li,
+.asteroom-blog-post-subscribe-section .inputs-list li {
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.asteroom-blog-subscribe-section .legal-consent-container .hs-form-booleancheckbox-display,
+.asteroom-blog-post-subscribe-section .legal-consent-container .hs-form-booleancheckbox-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.asteroom-blog-subscribe-section .legal-consent-container input[type="checkbox"],
+.asteroom-blog-post-subscribe-section .legal-consent-container input[type="checkbox"] {
+  margin: 3px 0 0;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  position: relative;
+  top: 0;
+}
+
+.asteroom-blog-subscribe-section .legal-consent-container .hs-form-booleancheckbox-display span,
+.asteroom-blog-post-subscribe-section .legal-consent-container .hs-form-booleancheckbox-display span {
+  display: inline-block;
+  color: #1a2744;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.asteroom-blog-subscribe-section .hs-button,
+.asteroom-blog-post-subscribe-section .hs-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #1f3155;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.asteroom-blog-subscribe-section .hs-button:hover,
+.asteroom-blog-post-subscribe-section .hs-button:hover {
+  background: #172745;
+}
+
+.asteroom-blog-subscribe-section .submitted-message,
+.asteroom-blog-post-subscribe-section .submitted-message {
+  color: #1a2744;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Tablet
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 991px) {
+  .asteroom-blog-subscribe-section,
+  .asteroom-blog-post-subscribe-section {
+    padding: 0 20px 44px;
+  }
+
+  .asteroom-blog-subscribe-section__divider,
+  .asteroom-blog-post-subscribe-section__divider,
+  .asteroom-blog-subscribe-section__inner,
+  .asteroom-blog-post-subscribe-section__inner {
+    max-width: 720px;
+  }
+
+  .asteroom-blog-subscribe-section__inner,
+  .asteroom-blog-post-subscribe-section__inner {
+    padding: 20px 22px;
+    gap: 14px;
+  }
+
+  .asteroom-blog-subscribe-section__content,
+  .asteroom-blog-post-subscribe-section__content,
+  .asteroom-blog-subscribe-section__form-wrap,
+  .asteroom-blog-post-subscribe-section__form-wrap {
+    max-width: 100%;
+  }
+
+  .asteroom-blog-subscribe-section__title,
+  .asteroom-blog-post-subscribe-section__title {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .asteroom-blog-subscribe-section__description,
+  .asteroom-blog-post-subscribe-section__description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .asteroom-blog-subscribe-section,
+  .asteroom-blog-post-subscribe-section {
+    padding: 28px 16px 40px;
+  }
+
+  .asteroom-blog-subscribe-section__divider,
+  .asteroom-blog-post-subscribe-section__divider {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .asteroom-blog-subscribe-section__inner,
+  .asteroom-blog-post-subscribe-section__inner {
+    max-width: 100%;
+    padding: 18px 16px;
+    border-radius: 16px;
+    gap: 12px;
+  }
+
+  .asteroom-blog-subscribe-section__content,
+  .asteroom-blog-post-subscribe-section__content,
+  .asteroom-blog-subscribe-section__form-wrap,
+  .asteroom-blog-post-subscribe-section__form-wrap {
+    max-width: 100%;
+  }
+
+  .asteroom-blog-subscribe-section__title,
+  .asteroom-blog-post-subscribe-section__title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .asteroom-blog-subscribe-section__description,
+  .asteroom-blog-post-subscribe-section__description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .asteroom-blog-subscribe-section .hs-input,
+  .asteroom-blog-post-subscribe-section .hs-input,
+  .asteroom-blog-subscribe-section .hs-form .hs_email,
+  .asteroom-blog-subscribe-section .hs-form .hs_firstname,
+  .asteroom-blog-post-subscribe-section .hs-form .hs_email,
+  .asteroom-blog-post-subscribe-section .hs-form .hs_firstname {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .asteroom-blog-subscribe-section .hs-form .hs_email input,
+  .asteroom-blog-subscribe-section .hs-form .hs_firstname input,
+  .asteroom-blog-post-subscribe-section .hs-form .hs_email input,
+  .asteroom-blog-post-subscribe-section .hs-form .hs_firstname input {
+    max-width: 100%;
+  }
+
+  .asteroom-blog-subscribe-section input[type="text"],
+  .asteroom-blog-post-subscribe-section input[type="text"],
+  .asteroom-blog-subscribe-section input[type="email"],
+  .asteroom-blog-post-subscribe-section input[type="email"] {
+    min-height: 42px;
+    font-size: 14px;
+  }
+
+  .asteroom-blog-subscribe-section .legal-consent-container .hs-form-booleancheckbox-display span,
+  .asteroom-blog-post-subscribe-section .legal-consent-container .hs-form-booleancheckbox-display span {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .asteroom-blog-subscribe-section .hs-button,
+  .asteroom-blog-post-subscribe-section .hs-button {
+    min-height: 42px;
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================================
+   11. Blog post subscribe section refinement
+   ========================================================================== */
+
+.asteroom-blog-post-subscribe-section {
+  padding: 20px 24px 40px !important;
+}
+
+.asteroom-blog-post-subscribe-section__divider {
+  max-width: 860px;
+  margin: 0 auto 28px;
+}
+
+.asteroom-blog-post-subscribe-section__inner {
+  max-width: 860px;
+  padding: 16px 20px !important;
+  gap: 8px !important;
+  border-radius: 16px !important;
+}
+
+.asteroom-blog-post-subscribe-section__content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.asteroom-blog-post-subscribe-section__title {
+  margin: 0 0 4px !important;
+  font-size: 25px !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+}
+
+.asteroom-blog-post-subscribe-section__description {
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+.asteroom-blog-post-subscribe-section__form-wrap {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.asteroom-blog-post-subscribe-section .hs-form {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.asteroom-blog-post-subscribe-section .hs-form-field {
+  margin-bottom: 10px !important;
+}
+
+.asteroom-blog-post-subscribe-section .hs-input,
+.asteroom-blog-post-subscribe-section input[type="text"],
+.asteroom-blog-post-subscribe-section input[type="email"] {
+  min-height: 40px !important;
+  padding: 8px 12px !important;
+}
+
+.asteroom-blog-post-subscribe-section .hs-button {
+  min-height: 40px !important;
+  padding: 8px 18px !important;
+}
+
+@media (max-width: 767px) {
+  .asteroom-blog-post-subscribe-section {
+    padding: 18px 16px 36px !important;
+  }
+
+  .asteroom-blog-post-subscribe-section__divider {
+    margin: 0 auto 20px;
+  }
+
+  .asteroom-blog-post-subscribe-section__inner {
+    padding: 14px 14px !important;
+  }
+
+  .asteroom-blog-post-subscribe-section__title,
+  .asteroom-blog-post-subscribe-section__description {
+    font-size: 14px !important;
+  }
+}
+
+/* ==========================================================================
+   12. Blog contact section
+   ========================================================================== */
+
+.asteroom-blog-contact-section {
+  padding: 20px 20px 48px;
+}
+
+.asteroom-blog-contact-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.asteroom-blog-contact-section__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 28px;
+  background-color: #92d2dc;
+  color: #FFFFFF !important;
+  border: 1px solid #92d2dc;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.asteroom-blog-contact-section__button:hover,
+.asteroom-blog-contact-section__button:focus {
+  background-color: #9bdfeb;
+  border-color: #9bdfeb;
+  color: #FFFFFF !important;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .asteroom-blog-contact-section {
+    padding: 20px 16px 4px;
+  }
+
+  .asteroom-blog-contact-section__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .asteroom-blog-contact-section__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
