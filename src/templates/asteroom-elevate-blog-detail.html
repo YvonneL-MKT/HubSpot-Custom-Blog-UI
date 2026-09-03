@@ -1,1 +1,110 @@
+<!--
+  templateType: "blog_post"
+  label: "Blog post"
+  screenshotPath: "../images/template-previews/blog-post.png"
+  isAvailableForNewContent: true
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
 
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+  {% endif %}
+
+  {{ require_css(get_asset_url("./asteroom-blog-header-footer.css")) }}
+  {{ standard_header_includes }}
+</head>
+<body>
+{% include "./asteroom-site-header.html" %}
+
+<main class="asteroom-blog-main">
+  {% module "blog_content" path="@hubspot/blog_content", label="Blog content" %}
+ <section class="asteroom-blog-post-subscribe-section">
+   <div class="asteroom-blog-post-subscribe-section__divider"></div>
+   <div class="asteroom-blog-post-subscribe-section__inner">
+    <div class="asteroom-blog-post-subscribe-section__content">
+      <div class="asteroom-blog-post-subscribe-section__title" role="heading" aria-level="2">
+        Stay updated with Asteroom insights
+      </div>
+    </div>
+
+    <div class="asteroom-blog-post-subscribe-section__form-wrap">
+      <div id="asteroom-blog-post-subscribe-form"></div>
+    </div>
+  </div>
+</section>
+
+    <section class="asteroom-blog-contact-section">
+   <div class="asteroom-blog-contact-section">
+        <div class="asteroom-blog-contact-section__inner">
+          <a
+            class="asteroom-blog-contact-section__button"
+            href="https://www.asteroom.com/en/contact-us"
+          >
+            Contact Us
+          </a>
+        </div>
+    </div>  
+</section>
+
+<script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "na2",
+    portalId: "YOUR_PORTAL_ID",
+    formId: "YOUR_FORM_ID",
+    target: "#asteroom-blog-post-subscribe-form",
+    formInstanceId: "asteroom-blog-post-subscribe-form-1"
+  });
+</script>
+</main>
+
+
+{% include "./asteroom-site-footer.html" %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var header = document.getElementById('asteroomBlogHeader');
+    var nav = document.getElementById('asteroomBlogNav');
+    var toggle = header ? header.querySelector('.asteroom-blog-header__toggle') : null;
+
+    if (!header || !nav) return;
+
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var isOpen = header.classList.toggle('is-menu-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    nav.addEventListener('click', function (event) {
+      var trigger = event.target.closest('a, span');
+      if (!trigger) return;
+
+      var parentItem = trigger.closest('.hs-item-has-children');
+      if (!parentItem) return;
+
+      var isTopLevelTrigger =
+        trigger.parentElement === parentItem &&
+        (trigger.tagName === 'A' || trigger.tagName === 'SPAN');
+
+      if (!isTopLevelTrigger) return;
+
+      var submenu = parentItem.querySelector(':scope > .hs-menu-children-wrapper');
+      if (!submenu) return;
+
+      event.preventDefault();
+
+      if (window.innerWidth <= 1024) {
+        parentItem.classList.toggle('is-open');
+      }
+    });
+  });
+</script>
+
+  {{ standard_footer_includes }}
+</body>
+</html>
