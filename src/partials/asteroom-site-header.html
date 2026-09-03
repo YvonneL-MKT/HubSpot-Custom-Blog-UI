@@ -1,1 +1,111 @@
+<!--
+    templateType: global_partial
+    isAvailableForNewContent: false
+-->
+<!-- Begin partial -->
+<header class="asteroom-blog-header" id="asteroomBlogHeader">
+  <div class="asteroom-blog-header__inner">
+    <a href="https://www.asteroom.com/en" class="asteroom-blog-header__logo-link">
+      <img
+        src="https://www.asteroom.com/Images/layout/banner_imagesasteroom.png"
+        alt="Asteroom Logo"
+        class="asteroom-blog-header__logo"
+      >
+    </a>
 
+    <button
+      class="asteroom-blog-header__toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="asteroomBlogNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="asteroom-blog-header__nav" id="asteroomBlogNav">
+      {% module "blog_header_menu"
+        path="@hubspot/menu",
+        label="Blog header menu",
+        flow="horizontal",
+        flyouts=true,
+        max_levels=3
+      %}
+    </div>
+
+    <div class="asteroom-blog-header__actions">
+      <a href="https://www.asteroom.com/editor/sign.html?lang=en" class="asteroom-btn asteroom-btn--secondary">Log In</a>
+      <a href="https://www.asteroom.com/en/get-started-portal" class="asteroom-btn asteroom-btn--primary">Get Started</a>
+    </div>
+  </div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var header = document.querySelector('.asteroom-blog-header');
+  if (!header) return;
+
+  var menuToggle = header.querySelector('.asteroom-blog-header__toggle');
+  var parentItems = Array.prototype.slice.call(
+    header.querySelectorAll('.hs-menu-wrapper .hs-item-has-children')
+  );
+
+  function isMobileOrTablet() {
+    return window.innerWidth <= 1024;
+  }
+
+  function closeAllSubmenus(exceptItem) {
+    parentItems.forEach(function (item) {
+      if (item !== exceptItem) {
+        item.classList.remove('is-submenu-open');
+      }
+    });
+  }
+
+  function closeEverySubmenu() {
+    parentItems.forEach(function (item) {
+      item.classList.remove('is-submenu-open');
+    });
+  }
+
+  parentItems.forEach(function (item) {
+    var trigger = item.querySelector(':scope > a, :scope > span');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', function (e) {
+      if (!isMobileOrTablet()) return;
+
+      e.preventDefault();
+
+      var isOpen = item.classList.contains('is-submenu-open');
+      closeAllSubmenus(item);
+
+      if (isOpen) {
+        item.classList.remove('is-submenu-open');
+      } else {
+        item.classList.add('is-submenu-open');
+      }
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    if (!isMobileOrTablet()) {
+      closeEverySubmenu();
+    }
+  });
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function () {
+      var willOpenMenu = !header.classList.contains('is-menu-open');
+
+      if (!willOpenMenu) {
+        closeEverySubmenu();
+      }
+    });
+  }
+});
+</script>
+
+<!-- End partial -->
